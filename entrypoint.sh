@@ -71,6 +71,10 @@ function translateDockerTag() {
   else
     TAG="${BRANCH}"
   fi;
+
+  if uses "${INPUT_TAG_SUFFIX}"; then
+    TAG="${TAG}${INPUT_TAG_SUFFIX}"
+  fi
 }
 
 function hasCustomTag() {
